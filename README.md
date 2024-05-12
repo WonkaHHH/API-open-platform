@@ -1,6 +1,6 @@
 # API open platform
 ## Architecture diagram
-
+![image](https://github.com/WonkaHHH/API-open-platform/blob/master/images/img.png)
 ## Modules
 backend：Manages interface services  
 gateway：Gateway service, which protects interface services  
