@@ -1,0 +1,31 @@
+server:
+  port: 8090
+spring:
+  cloud:
+    gateway:
+      default-filters:
+        - AddRequestHeader=api_source, xiaoxi_api_gateway
+        - AddResponseHeader=api_source, xiaoxi_api_gateway
+      routes:
+        - id: api_route
+          uri: http://127.0.0.1:8123
+          predicates:
+            - Path=/api/**
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway: trace
+
+dubbo:
+  application:
+    name: api-consumer
+    qosEnable: true
+    qosPort: 33333
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address:
+
